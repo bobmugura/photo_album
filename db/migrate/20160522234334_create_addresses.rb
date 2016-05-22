@@ -5,6 +5,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :suite
       t.string :city
       t.string :zipcode
+      t.references :user, index: true
 
       t.timestamps null: false
     end
