@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Thumbnail</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <tbody>
+    <% @user.albums.each do |album| %>
+      <tr>
+        <td><%= link_to( image_tag(album.photos.first.thumbnail_url), user_albums_path(album) ) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @user.website %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
