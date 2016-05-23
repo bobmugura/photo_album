@@ -1,6 +1,8 @@
+<div class="container-fluid">
+
 <p id="notice"><%= notice %></p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Thumbnail</th>
@@ -10,10 +12,12 @@
   <tbody>
     <% @user.albums.each do |album| %>
       <tr>
-        <td><%= link_to( image_tag(album.photos.first.thumbnail_url), user_albums_path(album) ) %></td>
+        <td><%= link_to( image_tag(album.photos.first.thumbnail_url), user_albums_path(@user.albums) ) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= link_to 'Back', users_path %>
+
+</div>
