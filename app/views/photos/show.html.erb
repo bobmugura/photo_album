@@ -1,23 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Album:</strong>
-  <%= @photo.album_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @photo.url %>
-</p>
-
-<p>
-  <strong>Thumbnail Url:</strong>
-  <%= @photo.thumbnail_url %>
+  <%= image_tag(@photo.thumbnail_url, size: '100%x100%',
+      :data => { :description => @photo.title, :title => @photo.title }) %>
 </p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
