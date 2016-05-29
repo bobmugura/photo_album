@@ -1,9 +1,27 @@
+<div class="container-fluid">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag(@photo.thumbnail_url, size: '100%x100%',
-      :data => { :description => @photo.title, :title => @photo.title }) %>
-</p>
+<h1>Photo Detail</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= image_tag(@photo.thumbnail_url, width: '100%', height: '100%',
+      :data => { :description => @photo.title, :title => @photo.title }) %></td>
+      <td><%= @photo.title %></td>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
+
+</div>
